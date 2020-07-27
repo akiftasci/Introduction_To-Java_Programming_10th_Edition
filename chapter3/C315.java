@@ -20,7 +20,8 @@ public class C315 {
 		int d1 = remain % 10;
 		remain = remain / 10;
 		int d2 = remain % 10;
-		int d3 = remain / 10;
+		int d3 = remain/10;
+		
 		
 
 		int remain2;

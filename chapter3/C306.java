@@ -13,7 +13,7 @@ public static void main(String[] args) {
 	System.out.println("Enter inches: ");
 	double inc = scan.nextDouble();
 	
-	double height = (feet + inc/0.0254)*0.0833;
+	double height = ((feet + inc)/0.0254)*0.0833;
 	double bmi = w /(height*height);
 	
 	if (bmi < 18.5)
