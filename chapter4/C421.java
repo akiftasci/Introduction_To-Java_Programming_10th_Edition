@@ -9,7 +9,7 @@ public static void main(String[] args) {
 	String number =input.nextLine();
 	String three = number.substring(0,3);
 	String two = number.substring(4,6);
-	String four = number.substring(7,11);
+	String four = number.substring(7);
 	
 	if( three.length()<3 || three.length()>3){
 		System.out.println("Error");
