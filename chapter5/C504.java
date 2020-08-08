@@ -8,7 +8,7 @@ public class C504 {
 		while(mile<10){
 			mile++;
 			km=mile*1.609;
-			System.out.println(mile+"          "+km);
+			System.out.printf(mile+"             %4.2f\n ",km);
 			
 		}
 	}
