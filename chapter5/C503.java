@@ -9,7 +9,7 @@ public static void main(String[] args) {
 		
 		kg=kg+2;
 		pound=kg*2.2;
-		System.out.println(kg+"                  "+pound);
+		System.out.printf(kg+"                  %4.2f\n",pound);
 	}
 	
 }
