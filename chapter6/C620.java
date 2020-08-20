@@ -14,7 +14,8 @@ public class C620 {
 		String kelime = s.toLowerCase();
 		
 		for(int i=0;i<kelime.length();i++){
-			if(kelime.charAt(i)>=97&&kelime.charAt(i)<=122 ||kelime.charAt(i)==231 ||kelime.charAt(i)==305 ||kelime.charAt(i)==287 ||kelime.charAt(i)==246 ||kelime.charAt(i)==351 ||kelime.charAt(i)==252){
+			//if(kelime.charAt(i)>=97&&kelime.charAt(i)<=122 ||kelime.charAt(i)==231 ||kelime.charAt(i)==305 ||kelime.charAt(i)==287 ||kelime.charAt(i)==246 ||kelime.charAt(i)==351 ||kelime.charAt(i)==252){
+				if (Character.isLetter(s.charAt(i))){
 				count++;
 				
 			}
