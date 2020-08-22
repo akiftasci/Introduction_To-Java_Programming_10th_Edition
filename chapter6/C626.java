@@ -4,17 +4,18 @@ public class C626 {
 	public static void main(String[] args) {
 		int count = 0;
 		for (int i = 2; count < 100; i++) {
-			if (IsPrime(i) && IsPalindromic(i)) {
+			if (isPrime(i) && isPalindromic(i)) {
 				System.out.print(i + "  ");
 				count++;
 				if (count % 10 == 0) {
 					System.out.println("");
 				}
+				
 			}
 		}
 	}
 
-	public static boolean IsPrime(int i) {
+	public static boolean isPrime(int i) {
 		boolean isprime = true;
 		for (int j = 2; j <= i / 2; j++) {
 			if (i % j == 0) {
@@ -24,7 +25,7 @@ public class C626 {
 		return isprime;
 	}
 
-	public static boolean IsPalindromic(int i) {
+	public static boolean isPalindromic(int i) {
 		boolean ispalindromic = false;
 		String a = Integer.toString(i);
 		String b = "";
