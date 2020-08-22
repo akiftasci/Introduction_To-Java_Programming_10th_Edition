@@ -9,7 +9,7 @@ public class C628 {
 		
 		for (i = 2; i <= 31; i++) {
 			
-				if (IsPrime(i) ) {
+				if (isPrime(i) ) {
 			
 				p=(int)Math.pow(2, i)-1;
 				System.out.printf(i + "\t\t"+p+"\n");
@@ -19,7 +19,7 @@ public class C628 {
 			}
 		}
 	}
-	public static boolean IsPrime(int i) {
+	public static boolean isPrime(int i) {
 		boolean isprime = true;
 		for (int j = 2; j <= i / 2; j++) {
 			if (i % j == 0) {
