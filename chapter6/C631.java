@@ -7,7 +7,12 @@ public static void main(String[] args) {
 	Scanner input  = new Scanner(System.in);
 	System.out.println("Enter a credit card number as a long integer: ");
 	long cardNumber = input.nextLong();
-	System.out.println(isValid(cardNumber));
+	if(isValid(cardNumber)==true){
+		System.out.println(cardNumber+" is valid");
+	}
+	else {
+		System.out.println(cardNumber+" is invalid");
+	}
 	
 }
 public static boolean isValid(long number){
