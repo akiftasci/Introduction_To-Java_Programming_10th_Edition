@@ -23,7 +23,26 @@ public class C630 {
 		}
 		else{
 			System.out.println("point is "+sum);
-			point=false;
+			pointMethod(sum);
+			point=true;
 		}
 	}}
+public static void pointMethod(int sum){
+	
+	while(true){
+		int dice1 =(int)((Math.random()*6)+1);
+		int dice2 =(int)((Math.random()*6)+1);
+		int sum2=dice1+dice2;
+		System.out.println("You rolled "+dice1+" + "+dice2+"="+sum2);
+		if(sum2==sum){
+			System.out.println("You win");
+			break;
+		}
+		else if (sum2==7){
+			System.out.println("You lose");
+			break;
+			
+		}
+	}
+}
 }
