@@ -20,44 +20,27 @@ public class C721 {
 	}
 
 	public static void printSlots(int[] slots) {
+		int max = slots[0];
+		int maxIndex=0;
 		for (int i = 0; i < slots.length; i++) {
-			switch (slots[i]) {
-			case(0):
-				System.out.println("The "+i+"th slot is empty");
-			break;
-			case (1):
-				System.out.println("The "+i+"th slot has 1 coin");
-				break;
-			case (2):
-				System.out.println("The "+i+"th slot has 2 coin");
-				break;
-			case (3):
-				System.out.println("The "+i+"th slot has 3 coin");
-				break;
-			case (4):
-				System.out.println("The "+i+"th slot has 4 coin");
-				break;
-			case (5):
-				System.out.println("The "+i+"th slot has 5 coin");
-				break;
-			case (6):
-				System.out.println("The "+i+"th slot has 6 coin");
-				break;
-			case (7):
-				System.out.println("The "+i+"th slot has 7 coin");
-				break;
-			case (8):
-				System.out.println("The "+i+"th slot has 8 coin");
-				break;
-			case (9):
-				System.out.println("The "+i+"th slot has 9 coin");
-				break;
-			case (10):
-				System.out.println("The "+i+"th slot has 10 coin");
-				break;
+			if(max<slots[i]) {
+				max=slots[i];
+				maxIndex=i;
 			}
 		}
-
+		//index-1 kadar boþluk sonra O sonra ln max-1 kadar bu iþlem 
+		while (max > 0) {
+			System.out.println();
+			for (int j = 0; j < slots.length; j++) {
+				if (slots[j] >= max) {
+					System.out.print("O");
+				}
+				else
+					System.out.print(" ");
+			}
+			max--;
+		}
+		System.out.println();
 	}
 
 	private static void printWay(int[] randomGenerator) {
@@ -77,7 +60,6 @@ public class C721 {
 
 	public static int findSlot(int[] randomGenerator) {
 		int countRight = 0;
-		int[] slots = new int[10];
 		for (int i = 0; i < randomGenerator.length; i++) {
 			if (randomGenerator[i] == 1) {
 				countRight++;
