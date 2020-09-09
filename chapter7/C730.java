@@ -14,10 +14,15 @@ public class C730 {
 			value = input.nextInt();
 			arr[i] = value;
 		}
-		consecutive(arr);
+		if(consecutive(arr)){
+			System.out.println("The list has consecutive fours.");
+		} else {
+			System.out.println("The list has no consecutive fours.");
+		
+		}
 	}
 
-	private static void consecutive(int[] arr) {
+	private static boolean consecutive(int[] arr) {
 		int temp;
 		int count = 0;
 		int max = arr[0];
@@ -33,12 +38,11 @@ public class C730 {
 		}
 		for (int j = 0; j < tempArr.length; j++) {
 			if (tempArr[j] == 4) {
-				System.out.println("The list has consecutive fours");
-				break;
+				return true;	
 			}
 
 		}
-		System.out.println("The list does not have consecutive fours");
+		return false;
 	}
 
 }
