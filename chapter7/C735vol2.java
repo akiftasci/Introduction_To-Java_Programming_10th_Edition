@@ -30,8 +30,16 @@ import java.util.Scanner;
 public class C735vol2 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		String[] words = { "ferrari" };
-		String len = words[0];
+
+		int indexOfWord = 0;
+		char user;
+		
+		String[] words = { "ferrari", "volkswagen", "bugatti", "mercedes" };
+		int missedCount = 0;
+		boolean restart=true;
+		boolean asd=true;
+		do{
+		String len = words[indexOfWord];
 		char[] harf = new char[len.length()];
 		for (int i = 0; i < harf.length; i++) {
 			harf[i] = len.charAt(i);
@@ -40,9 +48,25 @@ public class C735vol2 {
 		for (int i = 0; i < star.length; i++) {
 			star[i] = '*';
 		}
-		char user;
-
-		while (true) {
+	
+out:
+		while (asd=true) {
+			int countStars = 0;
+			for (int i = 0; i < star.length; i++) {
+				if (star[i] != '*') {
+					countStars++;
+					if (countStars == star.length) {
+						if (endProgram(words[indexOfWord], missedCount) == true) {
+							indexOfWord++;
+							asd=false;
+							break out;
+							
+						} else {
+							System.exit(0);
+						}
+					}
+				}
+			}
 			System.out.println("Enter a letter in the word " + Arrays.toString(star));
 			user = input.next().charAt(0);
 			boolean contrl = false;
@@ -57,16 +81,26 @@ public class C735vol2 {
 			}
 			if (contrl == false) {
 				System.out.println(user + " is not in the word");
+				missedCount++;
 			}
-			int countStar=0;
-		for (int i = 0; i < star.length; i++) {
-			if(star[i]=='*'){
-				countStar++;
-				if(countStar==0){
-					System.out.println("Do you want to guess another word?");
-				}
-			}
-		}}
+
+		}
+		}
+		while(restart);}
+
+	private static boolean endProgram(String string, int missedCount) {
+		System.out.println("The word is: " + string + ". You missed "
+				+ (missedCount > 1 ? missedCount + " times" : missedCount + " time"));
+		char cont;
+		Scanner inpt = new Scanner(System.in);
+		System.out.println("Do you want to guess another word? Enter y or n");
+		cont = inpt.next().charAt(0);
+		if (cont == 'y') {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
 }
