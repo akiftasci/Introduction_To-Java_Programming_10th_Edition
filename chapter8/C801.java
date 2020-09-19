@@ -12,7 +12,7 @@ public class C801 {
 				arr[i][j] = input.nextInt();
 			}
 		}
-		for (int ind = 0; ind < 3; ind++) {
+		for (int ind = 0; ind < 4; ind++) {
 
 			System.out.println("Sum of the elements at column " + ind + " is " + sumColumn(arr, ind));
 		}
@@ -21,8 +21,8 @@ public class C801 {
 
 	public static double sumColumn(double[][] m, int columnIndex) {
 		double total = 0;
-		for (int i = 0; i < 4; i++) {
-			total += m[columnIndex][i];
+		for (int i = 0; i <3; i++) {
+			total += m[i][columnIndex];
 		}
 		return total;
 	}
